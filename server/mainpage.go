@@ -2,15 +2,16 @@
 package server
 
 import (
-	"os"
-	"net.http"
+	"net/http"
 	"log"
+	"html/template"
 )
 
-func generate_html(w http.ResponseWriter, r *http.Request) {
-	file, err := os.Open("response.html")
+func Mainpage(w http.ResponseWriter, r *http.Request) {
+	html, err := template.ParseFiles("/home/ubuntu/work/src/calendar/templates/frontpage.html")
 	if err != nil {
 		log.Fatal(err)
 	}
+	html.ExecuteTemplate(w, "frontpage.html", nil) 
 } 
 
