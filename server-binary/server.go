@@ -14,6 +14,7 @@ func defaulthandle(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/foo", defaulthandle)
 	http.HandleFunc("/", server.Mainpage)
+	http.HandleFunc("/date.js", server.DateJavascript)
 	http.HandleFunc("/main.js", server.Javascript)
 	log.Fatal(http.ListenAndServe(":80", nil))
 }
