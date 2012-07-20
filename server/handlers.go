@@ -8,7 +8,11 @@ import (
 )
 
 func AddEntry(w http.ResponseWriter, r *http.Request) {
-	r.ParseForm()
+	err := r.ParseForm()
+	if (err != nil) {
+		log.Print(err)
+		return
+	}
 	log.Print(r.Form["date"])
 	log.Print(r.Form["time"])
 	log.Print(r.Form["item"])
