@@ -7,6 +7,13 @@ import (
 	"html/template"
 )
 
+func AddEntry(w http.ResponseWriter, r *http.Request) {
+	r.ParseForm()
+	log.Print(r.Form["date"])
+	log.Print(r.Form["time"])
+	log.Print(r.Form["item"])
+}
+
 func DateJavascript(w http.ResponseWriter, r *http.Request) {
 	w.Header()["Content-Type"] = []string{"text/javascript"}
 	html, err := template.ParseFiles("/home/ubuntu/work/src/calendar/templates/date-en-US.js")

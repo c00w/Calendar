@@ -26,6 +26,7 @@ calendar.add = function () {
 	var time = calendar.parse_time($('#time').val());
 	var item = $('#item').val();
 	console.log(date, time, item);
+	$.post('/add_entry', {'date':date, 'time':time, 'item':item});
 	calendar.show_main();
 };
 

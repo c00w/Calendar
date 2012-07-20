@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 27
+/svn/!svn/ver/194/trunk/src
+END
+extras.js
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/182/trunk/src/extras.js
+END
+core.js
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/194/trunk/src/core.js
+END
+parser.js
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/194/trunk/src/parser.js
+END
+date.js
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/124/trunk/src/date.js
+END
+sugarpak.js
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/191/trunk/src/sugarpak.js
+END
+time.js
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/svn/!svn/ver/189/trunk/src/time.js
+END

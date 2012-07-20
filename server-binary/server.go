@@ -13,6 +13,7 @@ func defaulthandle(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	http.HandleFunc("/foo", defaulthandle)
+	http.HandleFunc("/add_entry", server.AddEntry)
 	http.HandleFunc("/", server.Mainpage)
 	http.HandleFunc("/date.js", server.DateJavascript)
 	http.HandleFunc("/main.js", server.Javascript)

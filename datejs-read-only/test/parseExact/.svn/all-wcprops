@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/135/trunk/test/parseExact
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/124/trunk/test/parseExact/index.html
+END
+index.js
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/135/trunk/test/parseExact/index.js
+END
