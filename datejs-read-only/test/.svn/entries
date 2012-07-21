@@ -1,125 +1,0 @@
-10
-
-dir
-197
-http://datejs.googlecode.com/svn/trunk/test
-http://datejs.googlecode.com/svn
-
-
-
-2008-05-14T00:38:30.139098Z
-191
-geoff@coolite.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1386df6d-df38-0410-ade5-638ece4065a8
-
-relative_date_and_time
-dir
-
-tostring
-dir
-
-index.html
-file
-
-
-
-
-2012-07-16T04:49:02.433806Z
-65c786bca9d44506c3df2eb6cc775d56
-2008-04-13T20:00:59.845433Z
-162
-geoff@coolite.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-4925
-
-relative
-dir
-
-rememberthemilk
-dir
-
-date_and_time
-dir
-
-date
-dir
-
-sugarpak
-dir
-
-jQuery
-dir
-
-styles
-dir
-
-ruby_chronic
-dir
-
-date_math
-dir
-
-scripts
-dir
-
-core
-dir
-
-dst
-dir
-
-partial
-dir
-
-time
-dir
-
-culture_info
-dir
-
-parseExact
-dir
-
-date2
-dir
-
-performance
-dir
-
-images
-dir
-

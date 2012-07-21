@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-var client
+var client int
 
 func init() {
 	spec := redis.DefaultSpec().Db(1)
