@@ -47,7 +47,8 @@ func StoreEvent(event map[string]string) {
 	client.Rpush(date_key, []byte(event_key))
 	client.Expire(date_key, expire)
 
-	val, e = client.Get(date_key)
+	dlen, e := client.Llen(date_key)
+	vald, e := client.Lrange(date_key, 0, dlen) 
 	log.Print(date_key)
-	log.Print(string(val))
+	log.Print(len(vald))
 }
