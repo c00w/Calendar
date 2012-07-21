@@ -6,6 +6,8 @@ import (
 	"encoding/json"
 	"time"
 	"strconv"
+	"crypto/md5"
+	"io"
 )
 
 func getclient() (redis.Client) {
@@ -29,8 +31,12 @@ func StoreEvent(event map[string]string) {
 	if e != nil {
 		log.Fatal(e)
 	}
-	client.Set("test", str_event) 
-	client.Expire("test", expire); 
-	val, e := client.Get("test")
+	hash := md5.New()
+	io.WriteString(hash, string(str_event))
+	event_key := string(hash.Sum(nil))
+	client.Set(event_key, str_event) 
+	client.Expire(event_key, expire) 
+	val, e := client.Get(event_key)
+	log.Print(string(event_key))
 	log.Print(string(val))
 }
