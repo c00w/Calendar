@@ -13,9 +13,11 @@ func AddEntry(w http.ResponseWriter, r *http.Request) {
 		log.Print(err)
 		return
 	}
-	log.Print(r.Form["date"])
-	log.Print(r.Form["time"])
-	log.Print(r.Form["item"])
+	event := make(map[string]string, 3)
+	event["date"] = r.Form["date"][0]
+	event["time"] = r.Form["time"][0]
+	event["item"] = r.Form["item"][0]
+	StoreEvent(event)
 }
 
 func DateJavascript(w http.ResponseWriter, r *http.Request) {
