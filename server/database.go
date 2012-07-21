@@ -52,3 +52,24 @@ func StoreEvent(event map[string]string) {
 	log.Print(date_key)
 	log.Print(len(vald))
 }
+
+func getEvents(event_time int64) ([]string) {
+	
+	client := getclient()
+	event_time = event_time/1000
+	date_key := time.Unix(event_time, 0).Format("01/02/2006") 
+	dlen, e := client.Llen(date_key)
+	vald, e := client.Lrange(date_key, 0, dlen)
+	if e != nil {
+		log.Fatal(e)
+	}	
+	events := make([]string, len(vald))
+	for i, key:= range vald {
+		event, e := client.Get(string(key))
+		if e != nil {
+			log.Fatal(e)
+		}
+		events[i] = string(event)
+	}	
+	return events
+}
