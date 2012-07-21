@@ -23,20 +23,31 @@ func StoreEvent(event map[string]string) {
 	client := getclient()
 	str_event, e := json.Marshal(event)
 	expire, e := strconv.ParseInt(event["date"], 10, 64)
-	expire = expire/1000 - time.Now().Unix()
-	if expire <= 0 {
+	expire_d := expire/1000 - time.Now().Unix()
+	if expire_d <= 0 {
 		return
 	}
-	expire += 48 * 60 * 60
+	expire_d += 48 * 60 * 60
 	if e != nil {
 		log.Fatal(e)
 	}
 	hash := md5.New()
 	io.WriteString(hash, string(str_event))
 	event_key := string(hash.Sum(nil))
+
 	client.Set(event_key, str_event) 
 	client.Expire(event_key, expire) 
+
+	date_key := time.Unix(expire/1000, 0).Format("01/02/2006")
+
 	val, e := client.Get(event_key)
 	log.Print(string(event_key))
+	log.Print(string(val))
+	
+	client.Rpush(date_key, []byte(event_key))
+	client.Expire(date_key, expire)
+
+	val, e = client.Get(date_key)
+	log.Print(date_key)
 	log.Print(string(val))
 }
